@@ -1,0 +1,245 @@
+.no-tabs-box {
+  margin-top: 20px;
+  font-size: 1.6rem;
+  color: var(--text-color2);
+}
+
+.tab-title {
+  color: var(--text-color3);
+  font-weight: 500;
+  font-family: 'itim';
+  font-size: 1.4rem;
+}
+
+.footer {
+  padding: 20px 30px;
+  border-top: 1px solid var(--border-color2);
+}
+
+main .delete-btn {
+  border: none;
+  background-color: transparent;
+  padding: 4px;
+  display: flex;
+  border-radius: var(--radius-m);
+  transition: .1s;
+}
+
+.delete-tab-btn {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+main .delete-btn:hover {
+  background-color: #c4000020;
+}
+
+main .delete-btn:active {
+  background-color: transparent;
+}
+
+main .delete-btn svg {
+  fill: #c41c1c;
+  height: 1rem;
+}
+
+:is(.delete-tab-btn,
+ .delete-confirm-popup .delete-btn,
+ .delete-tab-confirm-popup .delete-btn
+) {
+  padding: .5rem 1.5rem;
+  border-radius: var(--radius-l);
+  border: none;
+  background-color: #c41c1c;
+  color: white;
+  transition: .1s linear;
+}
+
+:is(.delete-tab-btn,
+ .delete-confirm-popup .delete-btn,
+ .delete-tab-confirm-popup .delete-btn
+ ):hover {
+  background-color: #d82525;
+}
+
+:is(.delete-tab-btn,
+ .delete-confirm-popup .delete-btn,
+ .delete-tab-confirm-popup .delete-btn
+ ):active {
+  background-color: #ff3838;
+}
+
+.add-tab-popup-cover,
+.add-task-popup-cover,
+.add-event-popup-cover,
+.delete-confirm-popup-cover,
+.delete-tab-confirm-popup-cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+}
+
+.add-tab-popup,
+.add-task-popup,
+.add-event-popup,
+.delete-confirm-popup,
+.delete-tab-confirm-popup {
+  background-color: var(--bg-color);
+  padding: 1.5rem;
+  border-radius: calc(1.5 * var(--radius-l));
+  position: relative;
+}
+
+.add-tab-popup .close-popup-btn,
+.add-task-popup .close-popup-btn,
+.add-event-popup .close-popup-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  padding: 4px;
+  border-radius: 50%;
+  transition: .1s;
+}
+
+.add-tab-popup .close-popup-btn:hover,
+.add-task-popup .close-popup-btn:hover,
+.add-event-popup .close-popup-btn:hover {
+  background-color: var(--border-color2);
+}
+
+.add-tab-popup .close-popup-btn:active,
+.add-task-popup .close-popup-btn:active,
+.add-event-popup .close-popup-btn:active {
+  background-color: transparent;
+}
+
+.add-tab-popup .close-popup-btn svg,
+.add-task-popup .close-popup-btn svg,
+.add-event-popup .close-popup-btn svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.add-tab-popup .heading,
+.add-task-popup .heading,
+.add-event-popup .heading,
+.delete-confirm-popup .heading,
+.delete-tab-confirm-popup .heading {
+  font-size: 1.4rem;
+  color: var(--text-color1);
+}
+
+:is(.create-tab-btn,
+  .create-task-btn,
+  .create-event-btn) {
+  display: block;
+  padding: .4rem 1.8rem;
+  margin: 2.5rem 0 0 auto;
+  border-radius: var(--radius-l);
+  border: none;
+  background-color: #548fdb;
+  color: white;
+  cursor: default;
+}
+
+:is(.create-tab-btn,
+  .create-task-btn,
+  .create-event-btn):enabled {
+  cursor: pointer;
+}
+
+:is(.create-tab-btn,
+  .create-task-btn,
+  .create-event-btn):hover {
+  background-color: #4471ad;
+}
+
+:is(.create-tab-btn,
+  .create-task-btn,
+  .create-event-btn):active {
+  background-color: #548fdb;
+}
+
+:is(.create-task-btn,
+  .create-event-btn):disabled {
+  background-color: #b9b9b9;
+  color: #dfdfdf;
+}
+
+.delete-confirm-popup .description,
+.delete-tab-confirm-popup .description {
+  font-size: 1rem;
+  width: 400px;
+  margin-top: .8rem;
+}
+
+.delete-confirm-popup .btns,
+.delete-tab-confirm-popup .btns {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.delete-confirm-popup .cancel-btn,
+.delete-tab-confirm-popup .cancel-btn,
+.delete-confirm-popup .delete-btn,
+.delete-tab-confirm-popup .delete-btn {
+  width: 100%;
+  padding: 6px 12px;
+  text-align: center;
+  border-radius: var(--radius-l);
+  box-shadow: 1px 1px 6px #00000020;
+  cursor: pointer;
+  transition: .1s;
+}
+
+.delete-confirm-popup .cancel-btn,
+.delete-tab-confirm-popup .cancel-btn {
+  background-color: var(--border-color2);
+  color: var(--text-color2);
+}
+
+.delete-confirm-popup .cancel-btn:hover,
+.delete-tab-confirm-popup .cancel-btn:hover {
+  background-color: #a7a7a780;
+}
+
+.delete-confirm-popup .cancel-btn:active,
+.delete-tab-confirm-popup .cancel-btn:active {
+  background-color: #cacaca80;
+}
+
+.delete-tab-confirm-popup .input-fields-container {
+  margin: .4rem 0;
+}
+.delete-tab-confirm-popup input {
+  width: 360px;
+}
+
+.delete-tab-confirm-popup:has(input:invalid) .description {
+  color: #ff3838;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.display-none {
+  display: none;
+}
+
+.itim {
+  font-family: 'itim';
+}

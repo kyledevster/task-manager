@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="shortcut icon" href="assets/icons/favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="styles/shared.css">
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+  <header class="header">
+    <button class="home-icon selected">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M3.53374 20.4932V13.6132C3.53374 12.84 2.90694 12.2132 2.13374 12.2132H0.901784C0.551562 12.2132 0.370443 11.795 0.610035 11.5395L10.5498 0.942241C11.0889 0.367501 11.9959 0.350704 12.5559 0.905092L23.287 11.5289C23.541 11.7803 23.3629 12.2132 23.0056 12.2132H21.8226C21.0494 12.2132 20.4226 12.84 20.4226 13.6132V20.4932C20.4226 21.2664 19.7958 21.8932 19.0226 21.8932H15.6004C14.8272 21.8932 14.2004 21.2664 14.2004 20.4932V17.1332C14.2004 16.36 13.5736 15.7332 12.8004 15.7332H11.156C10.3828 15.7332 9.75597 16.36 9.75597 17.1332V20.4932C9.75597 21.2664 9.12917 21.8932 8.35597 21.8932H4.93374C4.16054 21.8932 3.53374 21.2664 3.53374 20.4932Z" />
+      </svg>
+    </button>
+    <div class="tabs-container"></div>
+    <button class="add-tab-btn add-btn">
+      <span>+</span>
+      <span>Add Tab</span>
+    </button>
+  </header>
+  <main>
+    <div class="popup-message hidden"></div>
+    <section class="progress-overview">
+      <div class="text">80%</div>
+      <div class="progress-bar-wrapper">
+        <div class="progress-bar"></div>
+        <div class="progress-bar"></div>
+        <div class="progress-bar"></div>
+        <div class="progress-bar"></div>
+      </div>
+    </section>
+    <section class="tasks">
+      <header>
+        <h2 class="heading">Pending Tasks</h2>
+      </header>
+      <div class="tasks-content">
+        <div class="task">
+          <label class="task-checkbox">
+            <input type="checkbox" name="checkbox" />
+          </label>
+          <div class="task-name">AoPS Alcumus</div>
+          <div class="task-url">
+            <a href="https://artofproblemsolving.com/alcumus" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="Interface / External_Link">
+                  <path id="Vector"
+                    d="M10.0002 5H8.2002C7.08009 5 6.51962 5 6.0918 5.21799C5.71547 5.40973 5.40973 5.71547 5.21799 6.0918C5 6.51962 5 7.08009 5 8.2002V15.8002C5 16.9203 5 17.4801 5.21799 17.9079C5.40973 18.2842 5.71547 18.5905 6.0918 18.7822C6.5192 19 7.07899 19 8.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7822C18.2837 18.5905 18.5905 18.2839 18.7822 17.9076C19 17.4802 19 16.921 19 15.8031V14M20 9V4M20 4H15M20 4L13 11"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="task no-url">
+          <label class="task-checkbox">
+            <input type="checkbox" name="checkbox" />
+          </label>
+          <div class="task-name">Task Name</div>
+          <div class="task-url">
+            <a href="https://www.google.com" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="Interface / External_Link">
+                  <path id="Vector"
+                    d="M10.0002 5H8.2002C7.08009 5 6.51962 5 6.0918 5.21799C5.71547 5.40973 5.40973 5.71547 5.21799 6.0918C5 6.51962 5 7.08009 5 8.2002V15.8002C5 16.9203 5 17.4801 5.21799 17.9079C5.40973 18.2842 5.71547 18.5905 6.0918 18.7822C6.5192 19 7.07899 19 8.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7822C18.2837 18.5905 18.5905 18.2839 18.7822 17.9076C19 17.4802 19 16.921 19 15.8031V14M20 9V4M20 4H15M20 4L13 11"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="task no-url">
+          <label class="task-checkbox">
+            <input type="checkbox" name="checkbox" />
+          </label>
+          <div class="task-name">Task Name</div>
+          <div class="task-url">
+            <a href="https://www.google.com" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="Interface / External_Link">
+                  <path id="Vector"
+                    d="M10.0002 5H8.2002C7.08009 5 6.51962 5 6.0918 5.21799C5.71547 5.40973 5.40973 5.71547 5.21799 6.0918C5 6.51962 5 7.08009 5 8.2002V15.8002C5 16.9203 5 17.4801 5.21799 17.9079C5.40973 18.2842 5.71547 18.5905 6.0918 18.7822C6.5192 19 7.07899 19 8.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7822C18.2837 18.5905 18.5905 18.2839 18.7822 17.9076C19 17.4802 19 16.921 19 15.8031V14M20 9V4M20 4H15M20 4L13 11"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="task">
+          <label class="task-checkbox">
+            <input type="checkbox" name="checkbox" />
+          </label>
+          <div class="task-name">javascript.info(1 unit)</div>
+          <div class="task-url">
+            <a href="https://www.javascript.info" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="Interface / External_Link">
+                  <path id="Vector"
+                    d="M10.0002 5H8.2002C7.08009 5 6.51962 5 6.0918 5.21799C5.71547 5.40973 5.40973 5.71547 5.21799 6.0918C5 6.51962 5 7.08009 5 8.2002V15.8002C5 16.9203 5 17.4801 5.21799 17.9079C5.40973 18.2842 5.71547 18.5905 6.0918 18.7822C6.5192 19 7.07899 19 8.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7822C18.2837 18.5905 18.5905 18.2839 18.7822 17.9076C19 17.4802 19 16.921 19 15.8031V14M20 9V4M20 4H15M20 4L13 11"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="events">
+      <header>
+        <h2 class="heading">Upcoming Events</h2>
+      </header>
+      <div class="events-content">
+        <div class="event">
+          <div class="event-date">Sat, 12 Mar 2027 — 98 days left</div>
+          <div class="left">
+            <div class="color-circle"></div>
+            <div class="event-name">Event 2</div>
+          </div>
+        </div>
+        <div class="event">
+          <div class="event-date">Sat, 12 Mar 2027 — 98 days left</div>
+          <div class="left">
+            <div class="color-circle"></div>
+            <div class="event-name">Event 3</div>
+          </div>
+        </div>
+        <div class="event">
+          <div class="event-date">Sat, 12 Mar 2027 — 98 days left</div>
+          <div class="left">
+            <div class="color-circle"></div>
+            <div class="event-name">Event 1</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="activity-calendar">
+      <h2 class="heading">Activity Calendar — 2026</h2>
+      <div class="calendar-content">
+        <div class="todays-stats">
+          <div class="max-streak">
+            <span class="name">Max Streak</span>
+            <span class="value">7</span>
+          </div>
+          <div class="active-streak">
+            <span class="name">Active Streak</span>
+            <span class="value">3</span>
+          </div>
+          <div class="max-points">
+            <span class="name">Max Points</span>
+            <span class="value">26</span>
+          </div>
+          <div class="current-points">
+            <span class="name">Current Points</span>
+            <span class="value">23</span>
+          </div>
+        </div>
+        <div class="year-container">
+          <div class="months-container">
+            <div class="days-bar">
+              <span>Su</span>
+              <span>Mo</span>
+              <span>Tu</span>
+              <span>We</span>
+              <span>Th</span>
+              <span>Fr</span>
+              <span>Sa</span>
+            </div>
+            <div class="months-content">
+              <div class="month">
+                <h2 class="heading">Jul</h2>
+                <div class="days">
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day color4"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day color3"></div>
+                  <div class="day color6"></div>
+                  <div class="day color5"></div>
+                  <div class="day color8"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                </div>
+              </div>
+              <div class="month">
+                <h2 class="heading">Aug</h2>
+                <div class="days">
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                </div>
+              </div>
+              <div class="month">
+                <h2 class="heading">Sep</h2>
+                <div class="days">
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                </div>
+              </div>
+              <div class="month">
+                <h2 class="heading">Oct</h2>
+                <div class="days">
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                </div>
+              </div>
+              <div class="month">
+                <h2 class="heading">Nov</h2>
+                <div class="days">
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                </div>
+              </div>
+              <div class="month">
+                <h2 class="heading">Dec</h2>
+                <div class="days">
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                  <div class="day"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="points-levels">
+            <span>less</span>
+            <div class="color1"></div>
+            <div class="color2"></div>
+            <div class="color3"></div>
+            <div class="color4"></div>
+            <div class="color5"></div>
+            <div class="color6"></div>
+            <div class="color7"></div>
+            <div class="color8"></div>
+            <div class="color9"></div>
+            <div class="color10"></div>
+            <span>more</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="add-tab-popup-cover display-none">
+    <div class="add-tab-popup">
+      <button class="close-popup-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-linecap="round"
+          stroke-linejoin="round" id="X--Streamline-Tabler">
+          <path d="M18 6 6 18" stroke-width="2"></path>
+          <path d="m6 6 12 12" stroke-width="2"></path>
+        </svg>
+      </button>
+      <h3 class="heading">New Tab</h3>
+      <div class="input-fields-container">
+        <label class="single-input">
+          <div class="text">
+            <span>Tab name</span><span class="char-count">0/20</span>
+          </div>
+          <input type="text" maxlength="20" name="Tab name" placeholder="eg. Tab 1, etc" class="tab-name-input required"
+            autocomplete="off">
+          <div class="error-text"></div>
+        </label>
+        <label>
+          Select tab color
+          <select name="tab color" class="color-select-container"></select>
+          <div class="error-text"></div>
+        </label>
+      </div>
+      <button class="create-tab-btn">Create</button>
+    </div>
+  </div>
+  <script src="scripts/index.js" type="module"></script>
+</body>
+
+</html>

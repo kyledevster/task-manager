@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#17223A"/>
+      <stop offset="1" stop-color="#111A2E"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3B82FF"/>
+      <stop offset="1" stop-color="#246BEB"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#19CDA3"/>
+      <stop offset="1" stop-color="#08B887"/>
+    </linearGradient>
+    <linearGradient id="pink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF4D79"/>
+      <stop offset="1" stop-color="#F22E61"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFB52E"/>
+      <stop offset="1" stop-color="#F39A12"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-opacity=".18"/>
+    </filter>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="7" stdDeviation="10" flood-opacity=".12"/>
+    </filter>
+  </defs>
+
+  <!-- App icon background -->
+  <rect x="72" y="72" width="880" height="880" rx="190" fill="url(#bg)"/>
+
+  <!-- Calendar -->
+  <g filter="url(#shadow)">
+    <rect x="370" y="255" width="490" height="495" rx="62" fill="#F8FAFD"/>
+    <path d="M370 317 Q370 255 432 255 H798 Q860 255 860 317 V385 H370Z" fill="url(#blue)"/>
+
+    <!-- Binder rings -->
+    <g>
+      <rect x="448" y="215" width="48" height="145" rx="24" fill="#3A5B9E"/>
+      <rect x="748" y="215" width="48" height="145" rx="24" fill="#3A5B9E"/>
+      <circle cx="472" cy="351" r="24" fill="#10192D"/>
+      <circle cx="772" cy="351" r="24" fill="#10192D"/>
+    </g>
+
+    <!-- Calendar tiles -->
+    <g fill="#E5EBF5">
+      <rect x="455" y="425" width="76" height="76" rx="15"/>
+      <rect x="594" y="425" width="76" height="76" rx="15"/>
+      <rect x="733" y="425" width="76" height="76" rx="15"/>
+      <rect x="455" y="553" width="76" height="76" rx="15"/>
+      <rect x="594" y="553" width="76" height="76" rx="15"/>
+      <rect x="733" y="553" width="76" height="76" rx="15"/>
+      <rect x="455" y="681" width="76" height="76" rx="15"/>
+      <rect x="594" y="681" width="76" height="76" rx="15"/>
+      <rect x="733" y="681" width="76" height="76" rx="15"/>
+    </g>
+
+    <!-- Highlighted event day -->
+    <rect x="733" y="553" width="76" height="76" rx="15" fill="url(#pink)"/>
+    <path d="M771 567 l8 17 19 2 -14 13 4 19 -17 -10 -17 10 4 -19 -14 -13 19 -2z"
+          fill="#fff"/>
+  </g>
+
+  <!-- Checklist card -->
+  <g filter="url(#shadow)">
+    <rect x="205" y="390" width="390" height="485" rx="58" fill="#FFFFFF"/>
+
+    <!-- Task 1 -->
+    <circle cx="282" cy="505" r="46" fill="url(#blue)"/>
+    <path d="M258 505 l17 17 32 -34" fill="none" stroke="#fff" stroke-width="14"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="347" y="485" width="190" height="24" rx="12" fill="#DCE4F1"/>
+
+    <!-- Task 2 -->
+    <circle cx="282" cy="645" r="46" fill="url(#green)"/>
+    <path d="M258 645 l17 17 32 -34" fill="none" stroke="#fff" stroke-width="14"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="347" y="625" width="190" height="24" rx="12" fill="#DCE4F1"/>
+
+    <!-- Task 3 -->
+    <circle cx="282" cy="785" r="46" fill="none" stroke="url(#orange)" stroke-width="16"/>
+    <circle cx="282" cy="785" r="13" fill="#fff"/>
+    <rect x="347" y="765" width="190" height="24" rx="12" fill="#DCE4F1"/>
+  </g>
+</svg>
