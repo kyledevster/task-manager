@@ -245,7 +245,7 @@ function renderTasks() {
     for (let [, task] of tab.tasks.entries()) {
       if (!task.isCompleted) {
         haveTask = true;
-        const { url, isCompleted, name } = task;
+        const { url, isCompleted, name, points } = task;
 
         html += `
           <div class="task ${url ? '' : 'no-url'}" style="--tab-color: ${tab.color};" data-tab-index="${tabs.indexOf(tab)}" data-task-index="${tab.tasks.indexOf(task)}">
@@ -253,6 +253,7 @@ function renderTasks() {
               <input type="checkbox" name="checkbox" class="task-checkbox-input" ${isCompleted ? 'checked' : ''} />
             </label>
             <div class="task-name">${name}</div>
+            <div class="task-points">${points}</div>
             <a href="${url ?? 'javascript:void(0)'}" target="_blank" tabIndex>
               <button class="task-url">
                 <svg  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
