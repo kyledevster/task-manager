@@ -196,8 +196,6 @@ function renderEvents() {
     return -1;
   });
 
-  console.log(events)
-
   for (let [, event] of events.entries()) {
     const { name, date, color } = event;
     const dateObj = new Date(date);
@@ -312,6 +310,7 @@ function renderTasks() {
         document.querySelector('.undo-btn').addEventListener('click', untick);
         popupMessageE.classList.remove('hidden');
         renderTasks();
+        renderCalendar();
         setTimeout(() => {
           if(taskE.classList.contains('display-none')) {
             taskE.remove();
@@ -334,6 +333,7 @@ function renderTasks() {
         renderTasks();
         saveToStorage();
         renderProgressOverview();
+        renderCalendar();
         
         document.querySelector('.undo-btn').removeEventListener('click', untick);
       }
@@ -346,7 +346,6 @@ function renderProgressOverview() {
   let remainPoints = 0;
   tabs.forEach((tab) => {
     /* issue */obtPoints += tab.points[getFormattedDate(todaysDate)] || 0;
-    console.log(tab.points)
     tab.tasks.forEach((task) => {
       if (!task.isCompleted) {
         remainPoints += task.points;
@@ -354,14 +353,11 @@ function renderProgressOverview() {
     });
   });
   const totalPoints = obtPoints + remainPoints;
-  console.log('remain points: ',remainPoints, '\n');
-  console.log('obt points: ',obtPoints, '\n');
   let html = '';
   const containerWidth = Math.round(+getComputedStyle(document.querySelector('.progress-bar-wrapper')).width.slice(0, -2));
 
   tabs.forEach((tab) => {
     const tabWidth = Math.round(containerWidth * ((tab.points[getFormattedDate(todaysDate)] || 0) / (totalPoints || 1)));
-    console.log(tab.name, tabWidth, totalPoints)
     html += `
       <div class="progress-bar" style="width:${tabWidth + 'px'}; --tab-color:${tab.color};">
         <div class="preview">${tab.name}, ${tab.points[getFormattedDate(todaysDate)] ?? 0} points, ${Math.round((tab.points[getFormattedDate(todaysDate)] ?? 0) * 100 / (totalPoints || 1))}%</div>
@@ -369,7 +365,6 @@ function renderProgressOverview() {
     `;
   });
 
-  console.log(obtPoints, totalPoints);
   document.querySelector('.progress-overview > .text').innerHTML = Math.round(100 * obtPoints / (totalPoints || 1)) + '%'
   document.querySelector('.progress-bar-wrapper').innerHTML = html;
 }
