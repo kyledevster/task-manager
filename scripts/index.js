@@ -296,7 +296,13 @@ function renderTasks() {
         checkmarkAudio.play();
 
         tabs[tabIndex].tasks[taskIndex].isCompleted = true;
-        tabs[tabIndex].points[getFormattedDate(todaysDate)] += tabs[tabIndex].tasks[taskIndex].points;
+        if(tabs[tabIndex].points[getFormattedDate(todaysDate)]) {
+
+          tabs[tabIndex].points[getFormattedDate(todaysDate)] += tabs[tabIndex].tasks[taskIndex].points;
+        } else {
+
+          tabs[tabIndex].points[getFormattedDate(todaysDate)] = tabs[tabIndex].tasks[taskIndex].points;
+        }
         tabs[tabIndex].tasks[taskIndex].markedDate = getFormattedDate(todaysDate);
         taskE.classList.add('display-none');
         popupMessageE.innerHTML = `
@@ -339,7 +345,8 @@ function renderProgressOverview() {
   let obtPoints = 0;
   let remainPoints = 0;
   tabs.forEach((tab) => {
-    obtPoints += tab.points[getFormattedDate(todaysDate)] ?? 0;
+    /* issue */obtPoints += tab.points[getFormattedDate(todaysDate)] || 0;
+    console.log(tab.points)
     tab.tasks.forEach((task) => {
       if (!task.isCompleted) {
         remainPoints += task.points;
@@ -347,11 +354,14 @@ function renderProgressOverview() {
     });
   });
   const totalPoints = obtPoints + remainPoints;
+  console.log('remain points: ',remainPoints, '\n');
+  console.log('obt points: ',obtPoints, '\n');
   let html = '';
   const containerWidth = Math.round(+getComputedStyle(document.querySelector('.progress-bar-wrapper')).width.slice(0, -2));
 
   tabs.forEach((tab) => {
-    const tabWidth = Math.round(containerWidth * ((tab.points[getFormattedDate(todaysDate)] ?? 0) / (totalPoints || 1)));
+    const tabWidth = Math.round(containerWidth * ((tab.points[getFormattedDate(todaysDate)] || 0) / (totalPoints || 1)));
+    console.log(tab.name, tabWidth, totalPoints)
     html += `
       <div class="progress-bar" style="width:${tabWidth + 'px'}; --tab-color:${tab.color};">
         <div class="preview">${tab.name}, ${tab.points[getFormattedDate(todaysDate)] ?? 0} points, ${Math.round((tab.points[getFormattedDate(todaysDate)] ?? 0) * 100 / (totalPoints || 1))}%</div>
@@ -359,6 +369,7 @@ function renderProgressOverview() {
     `;
   });
 
+  console.log(obtPoints, totalPoints);
   document.querySelector('.progress-overview > .text').innerHTML = Math.round(100 * obtPoints / (totalPoints || 1)) + '%'
   document.querySelector('.progress-bar-wrapper').innerHTML = html;
 }

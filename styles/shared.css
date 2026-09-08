@@ -355,6 +355,15 @@ header {
   text-decoration: line-through;
 }
 
+.task-points {
+  border: 2px solid var(--border-color2);
+  width: 26px;
+  margin-right: .4rem;
+  text-align: center;
+  align-content: center;
+  border-radius: var(--radius-s);
+}
+
 .task-url,
 .task-url a {
   display: flex;

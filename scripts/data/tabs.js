@@ -2,7 +2,7 @@
 export const colors = ['#006fff', '#009020', '#f59700', '#7c3aed', '#830000', '#2a00c3', '#00bba2'];
 export const tabs = getFromStorage() || [];
 export const todaysDate = new Date();
-export const checkmarkAudio = new Audio('../assets/audio/checkmark.mp3');
+export const checkmarkAudio = new Audio('../../assets/audio/checkmark.mp3');
 export const weekdays = [
   "Sunday", "Monday", "Tuesday", "Wednesday",
   "Thursday", "Friday", "Saturday"

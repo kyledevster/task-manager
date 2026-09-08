@@ -403,7 +403,7 @@ function renderTasks(tasks) {
   const tasksClone = structuredClone(tasks);
 
   for (let [index, task] of tasksClone.entries()) {
-    const { name, url, isCompleted } = task;
+    const { name, url, isCompleted, points } = task;
     if (isCompleted) {
       tasks.splice(index, 1);
       continue;
@@ -415,6 +415,7 @@ function renderTasks(tasks) {
           <input type="checkbox" name="checkbox" class="task-checkbox-input" ${isCompleted ? 'checked' : ''} />
         </label>
         <div class="task-name">${name}</div>
+        <div class="task-points">${points}</div>
         <a href="${url ?? 'javascript:void(0)'}" target="_blank" tabIndex>
           <button class="task-url">
             <svg  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
