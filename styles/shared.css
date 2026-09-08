@@ -347,7 +347,7 @@ header {
   width: 100%;
   font-weight: 450;
   transition: .12s ease-out;
-  font-family: 'itim';
+  font-family: 'itim', Arial;
 }
 
 .task-checkbox:has(input:checked)+.task-name {
@@ -499,7 +499,7 @@ header {
 }
 
 .left .event-name {
-  font-family: 'itim';
+  font-family: 'itim', Arial;
   margin-right: 8px;
 }
 
@@ -546,7 +546,7 @@ header {
 
 .todays-stats .value {
   font-size: 1.2rem;
-  font-family: 'itim';
+  font-family: 'itim', Arial;
   min-width: 20px;
 }
 
