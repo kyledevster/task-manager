@@ -7,7 +7,7 @@
 .tab-title {
   color: var(--text-color3);
   font-weight: 500;
-  font-family: 'itim';
+  font-family: 'itim', Arial;
   font-size: 1.4rem;
 }
 
@@ -241,5 +241,5 @@ main .delete-btn svg {
 }
 
 .itim {
-  font-family: 'itim';
+  font-family: 'itim', Arial;
 }
